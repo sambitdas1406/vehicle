@@ -11,17 +11,26 @@
 </head>
 <body>
 <%@page  import="java.text.SimpleDateFormat"%>
+ <%@ page import="java.util.Random" %>
+ 
+ <%Random rand = new Random();
+    int randomnumber = rand.nextInt(90000) + 10000;
+    
+    %>
 <%
 try {
 	//empid,fname,lname,designation,dob,address,phone,gender,pincode,salary
 	
   
-	     
-		  String emp=request.getParameter("empid");
-          int id1=Integer.parseInt(emp);
+	     int emp1=randomnumber;
+	     System.out.println("emp1"+emp1);
+	
+	
+		 // String emp=request.getParameter("empid");
+       //   int id1=Integer.parseInt(emp);
 
-		    System.out.println(id1);
-			  Integer job_id = id1;
+		    //System.out.println(id1);
+			  Integer job_id = emp1;
 				StringBuilder job_id_as_str = new StringBuilder();
 				if(null != job_id) {
 					System.out.println(job_id.toString().length());
@@ -82,8 +91,8 @@ pstmt.setFloat(10, salary);
 
 int s= pstmt.executeUpdate();
 if(s>0){
+	response.sendRedirect("AddEmployee.jsp");
 %>
-<jsp:forward page="AddEmployee.jsp"></jsp:forward>
 <% 
 }
 else{

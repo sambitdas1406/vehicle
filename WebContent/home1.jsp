@@ -110,6 +110,12 @@
 									<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
+								<li>
+									<a href="ViewTimeSheet.jsp">View TimeSheet</a>
+								</li>
 							</ul>
 						</li>
 						
@@ -490,7 +496,63 @@ conn.close();
 out.println("Unable to connect to database.");
 }
 %>										
-							
+	<% 
+							 try{
+ 
+  Connection conn=null;
+ PreparedStatement pstmt=null;
+ ResultSet result=null;
+ Statement statement = null;
+
+ 
+String qry="select count(*) from vehicle.timesheet";
+Class.forName("com.mysql.jdbc.Driver");
+conn=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
+statement = conn.createStatement();
+result = statement.executeQuery(qry);
+%>
+
+<%
+while (result.next()) {
+	int Count = result.getInt(1);
+   // System.out.println(Count);
+%>
+	
+							<div class="col-xs-12 col-sm-6 col-md-3">
+
+							<div class="card horizontal cardIcon waves-effect waves-dark">
+								<div class="card-image orange"  style="width: 72px;">
+								<i class="glyphicon glyphicon-tasks"></i>
+								</div>
+								<div class="card-stacked">
+									<div class="card-content">
+										<h3 align="center"><%=result.getInt(1)%></h3> 
+									</div>
+									<div class="card-action">
+									 
+                                  <p  align="center"> <a href="ViewTimeSheet.jsp">Click Here</a></p>
+                                  </div>
+										<p align="center"><strong>TimeSheet</strong></p>
+									</div>
+								</div>
+							</div> 
+
+
+
+
+<% } %>
+<%
+// close all the connections.
+result.close();
+statement.close();
+conn.close();
+} catch (Exception ex) {
+%>
+						
+		<%
+out.println("Unable to connect to database.");
+}
+%>														
 						
 				</div>	
 

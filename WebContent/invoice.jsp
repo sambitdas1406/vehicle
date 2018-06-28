@@ -249,6 +249,12 @@ function validateform()
 									<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
+								<li>
+									<a href="ViewTimeSheet.jsp">View TimeSheet</a>
+								</li>
 							</ul>
 						</li>
 				</ul>
@@ -349,7 +355,7 @@ if( request.getParameter("partname")!=null &&request.getParameter("price")!=null
   <br>
   <tr>
   <td>labour charge: </td>
-  <td><input type="text" name="labour" id="labour" value="" size="20"  style="width:150px;" /></td>
+  <td><input type="number" name="labour" id="labour" value="" size="20"  style="width:150px;" /></td>
  </tr>
 
  <tr>

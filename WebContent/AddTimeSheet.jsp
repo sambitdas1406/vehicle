@@ -13,7 +13,9 @@
 <head>
 <meta charset="utf-8" />
 
-
+<style>
+select{display:block !important;}
+</style>
 
 
 
@@ -147,11 +149,7 @@
 		<div id="page-wrapper">
 			<div class="header">
 				
-				<ol class="breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Dashboard</a></li>
-					<li class="active">Data</li>
-				</ol>
+				
 
 			</div>
 			<div id="page-inner">
@@ -160,110 +158,168 @@
 				<br><br>
 				<a  href="home1.jsp" class="waves-effect waves-light btn green" style="float: left;margin-left: 10px;">DashBoard </a>
 				
-				<a href="AddEmployee.jsp" class="waves-effect waves-light btn green" style="float: right;">Add new </a><br><br><br><br>
+				<a href="ViewEmployee.jsp" class="waves-effect waves-light btn green" style="float: right;">View Employee </a>
+				
+								<a href="ViewTimeSheet.jsp" class="waves-effect waves-light btn green" style="float: right;margin-right:60px;">View TimeSheet </a><br><br><br><br>
+				
+				
+				<br><br><br><br>
 				<%@page import="java.sql.*" %>
 	
-				<%
- try{
- 
+	<%
   Connection con=null;
  PreparedStatement pstmt=null;
  ResultSet rs=null;
  Statement statement = null;
- String id1 = request.getParameter("eid");
- System.out.println("id1--->"+id1);
- int id=Integer.parseInt(id1);
-System.out.println("id-->"+id);
-//String qry="select * from vehicle.employee where eid="+id;
-String qry="select * from vehicle.employee where eid="+id;
 
+ 
+String qry="select * from vehicle.employee ";
 Class.forName("com.mysql.jdbc.Driver");
 con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
-//statement = con.createStatement();
-pstmt=con.prepareStatement(qry);
-rs=pstmt.executeQuery();
-//rs = statement.executeQuery(qry);
+statement = con.createStatement();
+rs = statement.executeQuery(qry);
+//while (rs.next()) {
+	
+
 %>
 
-<%
-if (rs.next()) {
-%>
 <div class="container">
-    <h1 align="center" style="color:#424bf4;"class="well">Update Form</h1>
+    <h1 align="center" style="color:#424bf4;"class="well">TimeSheet Form</h1>
 	<div class="col-lg-12 well">
- <h3 align="center"style="color:#4f7202;">EMPLOYEE UPDATE  FORM</h3><BR>
+ <h3 align="center"style="color:#4f7202;">EMPLOYEE TIMESHEET  FORM</h3><BR>
 	
 	<div class="row">
-				<form action="UpdateEmployeeProcess.jsp" method="post"  >
+				<form action="AddTimeSheetDB.jsp" method="post"  >
 				
 					<div class="col-sm-12">
 					
 					<div class="row">
 							<div class="col-sm-6 form-group">
 								Employee Id
-								<input type="text"  placeholder="Enter Employee Id Here.." value="<%=rs.getString(2) %>" name="id" class="form-control">
+								 <select name="eid" >
+                                    <% while (rs.next()) { %>
+                                   <option value="<%=rs.getString(2)%>"><%=rs.getString(2)%></option>     
+    
+                              <%}%>
+                              </select>
 							</div>
 							<div class="col-sm-6 form-group">
-								FirstName
-								<input type="text" placeholder="Enter FirstName Here.." value="<%=rs.getString(3) %>" name="firstname" class="form-control">
+								Job_No
+								<input type="number" placeholder="Enter Job_No Here.."  name="job_no" class="form-control">
 							</div>
-							<div class="col-sm-6 form-group">
-								<input type="hidden" placeholder="Enter  Here.." value="<%=rs.getString(1) %>" name="eid" class="form-control">
-							</div>
+							
 						</div>	
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								Last Name
-								<input type="text" placeholder="Enter Last Name" name="lastname" value="<%=rs.getString(4) %>" class="form-control" >
+								Work Title
+								<input type="text"  placeholder="Enter Work Title Here.."  name="title" class="form-control">
 							</div>
 							<div class="col-sm-6 form-group">
-								Designation
-								<input type="text" placeholder="Enter Designation Here.." value="<%=rs.getString(5) %>" name="designation" class="form-control">
+								Description
+								<input type="text"  placeholder="Enter Work Description Here.."  name="workdesc" class="form-control">
 							</div>
+							
+						</div>
+						<div class="row">
+						
+						<div class="col-sm-4 form-group">
+						Hour
+							<select name="hour">
+            <option selected="selected" value="">Select Hour</option>
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        </div>
+        <div class="col-sm-4 form-group">
+        Minute
+        <select name="min">
+            <option selected="selected" value="">Select Minute</option>
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+        </select>
+        </div>
+   
+
 						</div>	
 						<div class="row">
 							
 							<div class="col-sm-6 form-group">
-								Date Of Birth
-								<input type="date" placeholder="Enter 	Date Of Birth Here.." value="<%=rs.getString(6) %>" id="date" name="dob" class="form-control" required>
+								Date 
+								<input type="date" placeholder="Date "  id="date" name="date1" class="form-control" required>
 							</div>
 						</div>	
 						
 						
 										
-						<div class="form-group">
-							Address
-							<textarea placeholder="Enter Address Here.." value="<%=rs.getString(8) %>" name="address" rows="3"  class="form-control"></textarea>
-						</div>	
-						<div class="row">
-								
-							<div class="col-sm-4 form-group">
-								Mobile No
-								<input type="text" placeholder="Enter Mobile No Here.." name="phone" value="<%=rs.getString(9) %>" maxlength="10" class="form-control"required>
-							</div>	
-							<div class="col-sm-4 form-group">
-								Gender
-								 <input type="radio" name="gender" value ="male"placeholder="Gender"  style="position:relative; opacity:1;    left: 0px;
-                               height: 17px;
-                               width: 15px;
-                               display: inline;" />Male
-                               
-        <input type="radio" name="gender" value ="female" placeholder="Gender"style="position:relative; opacity:1;    left: 0px;
-                              height: 17px;
-                              width: 15px;
-                              display: inline;" />Female
-							</div>		
-						</div>
-						<div class="row">
-							<div class="col-sm-6 form-group">
-								Pincode
-								<input type="text" placeholder="Enter Pincode Here.." value="<%=rs.getString(10) %>" name="pincode" maxlength="6"  class="form-control">
-							</div>	
-							<div class="col-sm-6 form-group">
-								Employee Salary
-								<input type="text" placeholder="Enter Employee Salary Here..." value="<%=rs.getString(11) %>" name="salary" class="form-control">
-							</div>		
-						</div>						
 					
 					
 				
@@ -280,20 +336,10 @@ if (rs.next()) {
 
 
 
-<% } %>
-<%
-// close all the connections.
-rs.close();
-statement.close();
-con.close();
-} catch (Exception ex) {
-%>
 
-<%
-out.println("Unable to connect to database.");
-}
-%>
-</TABLE>
+
+
+
 				
 				
 				
@@ -307,24 +353,10 @@ out.println("Unable to connect to database.");
 			</div>
 		</div>
 
-		<div class="fixed-action-btn horizontal click-to-toggle">
-			<a class="btn-floating btn-large red"> <i class="material-icons">menu</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-			</ul>
-		</div>
+	
 
 		<footer>
-			<p>
-				All right reserved. Template by: <a
-					href="https://webthemez.com/admin-template/">WebThemez.com</a>
-			</p>
-
+			
 
 		</footer>
 	</div>

@@ -286,6 +286,13 @@ document.getElementById('job_no').value=finalSequence;
 								<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
+								<li>
+									<a href="ViewTimeSheet.jsp">View TimeSheet</a>
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -328,20 +335,18 @@ document.getElementById('job_no').value=finalSequence;
 					<div class="col-sm-12">
 					
 					<div class="row">
-							<div class="col-sm-6 form-group">
-								Employee Id
-								<input type="text" maxlength="3" placeholder="Enter Employee Id Here.." name="empid" class="form-control">
-							</div>
+							
 							<div class="col-sm-6 form-group">
 								FirstName
 								<input type="text" placeholder="Enter FirstName Here.." name="fname" class="form-control">
 							</div>
-						</div>	
-						<div class="row">
 							<div class="col-sm-6 form-group">
 								Last Name
 								<input type="text" placeholder="Enter Last Name" name="lname" class="form-control" >
 							</div>
+						</div>	
+						<div class="row">
+							
 							<div class="col-sm-6 form-group">
 								Designation
 								<input type="text" placeholder="Enter Designation Here.." name="designation" class="form-control">

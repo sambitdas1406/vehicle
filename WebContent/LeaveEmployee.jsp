@@ -319,106 +319,81 @@ document.getElementById('job_no').value=finalSequence;
 				 															<a  href="home1.jsp" class="waves-effect waves-light btn green" style="float: left;margin-left: 50px;">DashBoard </a>
 				 								<a href="ViewEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Employee </a>
 				 				 								<a href="ViewSalary.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Salary </a>
+				 			<a href="ViewLeaveEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Leave Employee</a>
 				 
 				 <br>
 				 <br>
 				<div id="page-inner">
 				<%@ page import ="java.sql.*" %>
-				
+	<%
+  Connection con=null;
+ PreparedStatement pstmt=null;
+ ResultSet rs=null;
+ Statement statement = null;
 
-				
+ 
+String qry="select * from vehicle.employee ";
+Class.forName("com.mysql.jdbc.Driver");
+con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
+statement = con.createStatement();
+rs = statement.executeQuery(qry);
+//while (rs.next()) {
+	
 
-		<%
-String id = request.getParameter("id");
-String driver = "com.mysql.jdbc.Driver";
-String connectionUrl = "jdbc:mysql://localhost:3306/";
-String database = "vehicle";
-String userid = "root";
-String password = "sambit";
-try {
-Class.forName(driver);
-} catch (ClassNotFoundException e) {
-e.printStackTrace();
-}
-Connection connection = null;
-Statement statement = null;
-ResultSet resultSet = null;
 %>
 
-<%
-try{
-connection = DriverManager.getConnection(connectionUrl+database, userid, password);
-statement=connection.createStatement();
-String sql ="select * from vehicle.salary where id="+id;
-resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
+
 <div class="container">
-    <h1 align="center" style="color:#424bf4;"class="well">UPDATE SALARY TABLE</h1>
+    <h1 align="center" style="color:#424bf4;"class="well">LEAVE TABLE</h1>
 	<div class="col-lg-12 well">
- <h3 align="center"style="color:#4f7202;">EMPLOYEE SALARY UPDATE FORM</h3><BR>
+ <h3 align="center"style="color:#4f7202;">EMPLOYEE LEAVE  FORM</h3><BR>
 	
 	<div class="row">
-				<form action="UpdateSalaryProcess.jsp" method="post"  >
+				<form action="LeaveEmployeeDatabase.jsp" method="post"  >
 				
 					<div class="col-sm-12">
 					
 					<div class="row">
 							<div class="col-sm-6 form-group">
-			<input type="hidden" placeholder="Enter id Here.." name="id" value="<%=resultSet.getString(1)%>" class="form-control">
-							
 							Employee Id
 							  <select name="eid" >
-                                    
-                                   <option value="<%=resultSet.getString(2)%>"><%=resultSet.getString(2)%></option>     
+                                    <% while (rs.next()) { %>
+                                   <option value="<%=rs.getString(2)%>"><%=rs.getString(2)%></option>     
     
-                             
+                              <%}%>
                              </select>
 							</div>
+						
+						</div>	
+						<div class="form-group">
+							Leave Reason
+							<textarea placeholder="Enter Reason Here.." name="reason" rows="3" class="form-control"></textarea>
+						</div>
+						<div class="row">
+							
 							<div class="col-sm-6 form-group">
-								Month
-							<select name="month" required>
-                            <option value="" selected>select..</option>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                            
-                        </select>
+								Leave From-Date
+								<input type="date" placeholder="Enter 	Leave From-Date Here.." id="date" name="fdate" class="form-control" required>
+							</div>
+							<div class="col-sm-6 form-group">
+								Leave To-Date
+								<input type="date" placeholder="Enter 	Leave To-Date Here.." id="date" name="tdate" class="form-control" required>
 							</div>
 						</div>	
 						<div class="row">
-							<div class="col-sm-6 form-group">
-									Year
-							<select name="year"required>
-                            <option value="" selected>select..</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                            
-                        </select>
+			
+							<div class="col-sm-4 form-group">
+								Status
+								 <input type="radio" name="leave" value ="approved " placeholder="status"style="position:relative; opacity:1;    left: 0px;
+                               height: 17px;
+                               width: 15px;
+                               display: inline;" />Approved
+        <input type="radio" name="leave" value ="rejected " placeholder="0"style="position:relative; opacity:1;    left: 0px;
+                              height: 17px;
+                              width: 15px;
+                              display: inline;" />Rejected
 							</div>
-							<div class="col-sm-6 form-group">
-								Salary
-								<input type="text" placeholder="Enter Salary Here.." name="salary" value="<%=resultSet.getString(5)%>" class="form-control">
-							</div>
+							
 						</div>	
 						
 				
@@ -433,13 +408,9 @@ while(resultSet.next()){
 
 
 
-<%
-}
-connection.close();
-} catch (Exception e) {
-e.printStackTrace();
-}
-%>
+
+
+
 
 
 			

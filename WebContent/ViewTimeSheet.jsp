@@ -3,10 +3,31 @@
 
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.sql.*" %>
 <head>
+
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Admin Panel</title>
+
+<!-- For Data table -->
+<link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="assets/js/dataTables/dataTables.bootstrap.js" rel="stylesheet" />
+<link href="assets/js/dataTables/jquery.dataTables.js" rel="stylesheet" />
+
+<link href="https://code.jquery.com/jquery-3.3.1.js" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" rel="stylesheet" />
+<link href="cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" rel="stylesheet" />
+
+
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
@@ -87,12 +108,11 @@
 						<ul class="nav nav-second-level">
 							<li><a href="view.jsp?page=1">View Users</a></li>
 							<li><a href="category.jsp"> Find Vehicle</a></li>
-					        <li><a href="ViewBillInformation.jsp"> View Bill Information</a></li>
-						<li><a href="RecentInstalledVehicle.jsp"> View Recent Installed Vehicle</a></li>
-						 <li><a href="viewsellpart.jsp"> View Sell Of Parts </a></li>
+						  <li><a href="ViewBillInformation.jsp"> View Bill Information</a></li>
+					 <li><a href="RecentInstalledVehicle.jsp"> View Recent Installed Vehicle</a></li>
+					<li><a href="viewsellpart.jsp"> View Sell Of Parts </a></li>
 							
-						</ul>
-						</li>
+						</ul></li>
              	<li>
 							<a href="#" class="waves-effect waves-dark"><i class="fa fa-table"></i> Part Master <span class="fa arrow fa-angle-right"></span></a>
 							<ul class="nav nav-second-level">
@@ -102,6 +122,7 @@
 								<li>
 									<a href="viewpart.jsp?page=1">View Available Part</a>
 								</li>
+								
 							</ul>
 						</li>
 						<li>
@@ -110,7 +131,7 @@
 								<li>
 									<a href="ViewEmployee.jsp">View Employee</a>
 								</li>
-									<li>
+								<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
 								<li>
@@ -130,7 +151,7 @@
 
 		<div id="page-wrapper">
 			<div class="header">
-			
+				<h1 class="page-header"></h1>
 				<ol class="breadcrumb">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -139,69 +160,228 @@
 
 			</div>
 			<div id="page-inner">
+											<a href="home1.jsp" class="waves-effect waves-light btn green" style="float: left;">DashBoard </a>
 
+								<a href="ViewEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Employee </a>
+					<a href="AddTimeSheet.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">Add TimeSheet </a>
+								
+								
+								<br>
+								<br>
+								<br>
+								
 
-			
-<%@page import= " org.part.javaApp.PartDAO, org.part.javaApp.Part,java.util.*"%> 
-<%  
-String id=request.getParameter("id");  
-Part u=PartDAO.getRecordById(Integer.parseInt(id));  
-%>  
-	<div class="col-lg-12 well">
- <h3 align="center" style="color:#4f7202;">PART EDIT  FORM</h3><BR>
- </div>
-
-<div class="container">
-	<div class="row">
-  <form action="editpart.jsp" method="post">				
-					<div class="col-sm-12">
-					
-					<div class="row">
-					 <input type="hidden" name="id" value="<%=u.getId() %>"/>  
-							<div class="col-sm-6 form-group">
-								PartName
-								<input type="text" name="partname" spellcheck="false" value="<%= u.getPartname()%>" class="form-control">
-							</div>
-							<div class="col-sm-6 form-group">
-								PartDesc
-								<input type="text" name="partdesc" spellcheck="false" value="<%= u.getPartdesc()%>"class="form-control">
-							</div>
-						</div>	
-						<div class="row">
-							<div class="col-sm-6 form-group">
-								BrandName
-								<input type="text" name="brandname" spellcheck="false"value="<%= u.getBrandname()%>" class="form-control" >
-							</div>
-							<div class="col-sm-6 form-group">
-								BrandDesc
-								<input type="text" name="branddesc" spellcheck="false"value="<%= u.getBranddesc()%>" class="form-control">
-							</div>
-						</div>	
-						<div class="row">
-							<div class="col-sm-6 form-group">
-								Count
-								<input type="text" name="count" value="<%= u.getCount()%>"  class="form-control">
-							</div>
-							<div class="col-sm-6 form-group">
-								Price
-								<input type="text" name="price" value="<%= u.getPrice()%>" class="form-control">
-							</div>
-							<div class="col-sm-6 form-group">
-							 Date
-								<input type="date" value="<%= u.getUdate()%>" id="date" name="udate" placeholder="DD/MM/YYYY" class="form-control">
-							</div>
-						</div>	
-						    
-						
-					
-					
-					  <input type="submit" value="Edit Part" name="Edit Part" class="btn btn-lg btn-info"/>
-									
-					</div>
-				</form> 
-				</div>
+    <h3 align="center"style="color:#424bf4;"class="well">TIMESHEET  INFORMATION</h3>
+<%!
+public int Converter(String str)
+{  
 	
-	</div>
+	int convrtr=0; 
+	if(str==null)
+	{ 
+		str="0";
+		}
+	else if((str.trim()).equals("null"))
+	{ 
+		str="0";
+		} else if(str.equals(""))
+		{ 
+			str="0";
+			}
+	try{ 
+		convrtr=Integer.parseInt(str);
+		} catch(Exception e) 
+	{ 
+			
+	}
+	return convrtr;
+	
+	}
+%>
+<%
+Connection con = null;
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vehicle","root", "sambit");
+ResultSet rsPgin = null; 
+ResultSet rsRwCn = null; 
+PreparedStatement psPgintn=null;
+PreparedStatement psRwCn=null;
+//Number of records displayed on each page 
+int iSwRws=5;
+// Number of pages index displayed
+int iTotSrhRcrds=10;
+int iTotRslts=Converter(request.getParameter("iTotRslts"));
+int iTotPags=Converter(request.getParameter("iTotPags")); 
+int iPagNo=Converter(request.getParameter("iPagNo"));
+int cPagNo=Converter(request.getParameter("cPagNo")); 
+int iStRsNo=0; 
+int iEnRsNo=0;
+if(iPagNo==0)
+{
+	iPagNo=0;
+}
+else{
+	iPagNo=Math.abs((iPagNo-1)*iSwRws);
+}
+
+String sqlPgintn="SELECT SQL_CALC_FOUND_ROWS * FROM vehicle.timesheet limit "+iPagNo+","+iSwRws+"";
+psPgintn=con.prepareStatement(sqlPgintn);
+rsPgin=psPgintn.executeQuery(); 
+// Count total number of fetched rows String
+ String sqlRwCnt="SELECT FOUND_ROWS() as cnt";
+psRwCn=con.prepareStatement(sqlRwCnt); 
+rsRwCn=psRwCn.executeQuery(); 
+if(rsRwCn.next())
+{
+	iTotRslts=rsRwCn.getInt("cnt"); 
+	}
+
+
+%>
+<form name="frm">
+ <input type="hidden" name="iPagNo" value="<%=iPagNo%>"> 
+ <input type="hidden" name="cPagNo" value="<%=cPagNo%>"> 
+ <input type="hidden" name="iSwRws" value="<%=iSwRws%>"> 
+ <table class="table table-hover" style="width:100%" > 
+ 
+ <tr> 
+
+<td>Id</td>
+	 <td>EmployeeId</td>
+	 <td>Job_No</td>
+	 	 <td>title</td>
+	 	 <td>Hour</td>
+	 	  <td>Date</td>
+	 	 <td>Description</td>
+	 	 <td>Action</td>
+   </tr>
+<%
+	while(rsPgin.next())
+	  {
+		String h = rsPgin.getString("hour");
+		String m = rsPgin.getString("min");
+		//String ampm = rsPgin.getString("ampm");
+		String time = h+":"+m; 
+		
+%>
+<tr>
+ <TD><%=rsPgin.getInt(1)%></TD>
+<TD><%=rsPgin.getString(2)%></TD>
+<TD><%=rsPgin.getInt(3)%></TD>
+<TD><%=rsPgin.getString(4)%></TD>
+<td><%=time %></td>
+<TD><%=rsPgin.getString(7)%></TD>
+<TD><%=rsPgin.getString(8)%></TD>
+
+<td style="padding:12px 20px;    margin-right: 10px;"class="btn orange"><a href="UpdateTimeSheet.jsp?id=<%=rsPgin.getString("id")%>"><i style="color:#ffff" class="fa fa-edit" ></i></a></td>
+
+  </tr>
+  
+   <% 
+   }
+%>
+<% 
+// Calculate next record start and end position
+try{
+	if(iTotRslts<(iPagNo+iSwRws))
+	{ 
+		iEnRsNo=iTotRslts;
+		}
+	else
+	{
+		iEnRsNo=(iPagNo+iSwRws);
+		}
+	iStRsNo=(iPagNo+1);
+	iTotPags=((int)(Math.ceil((double)iTotRslts/iSwRws)));
+	} 
+catch(Exception e)
+{ 
+	e.printStackTrace();
+	} 
+	%>
+<tr>
+<td colspan="3">
+<div>
+
+<%
+//Create index of pages 
+int i=0;
+int cPge=0;
+
+if(iTotRslts!=0)
+{
+	cPge=((int)(Math.ceil((double)iEnRsNo/(iTotSrhRcrds*iSwRws))));
+	int prePageNo=(cPge*iTotSrhRcrds)-((iTotSrhRcrds-1)+iTotSrhRcrds);
+	if((cPge*iTotSrhRcrds)-(iTotSrhRcrds)>0)
+ 	{
+
+%>
+<a href="ViewTimeSheet.jsp?iPagNo=<%=prePageNo%>&cPagNo=<%=prePageNo%>"><< Previous</a>
+
+		<%
+        }
+	
+	for(i=((cPge*iTotSrhRcrds)-(iTotSrhRcrds-1));i<=(cPge*iTotSrhRcrds);i++)
+    {
+		if(i==((iPagNo/iSwRws)+1))
+      	{
+      	%>
+<a href="ViewTimeSheet.jsp?iPagNo=<%=i%>" style="cursor:pointer;color:red"><b><%=i%></b></a>
+
+<%
+} 
+		else if(i<=iTotPags) 
+		{ 
+		%> 
+		<a href="ViewTimeSheet.jsp?iPagNo=<%=i%>"><%=i%></a> 
+		<% 
+		}
+} 
+	if(iTotPags>iTotSrhRcrds&& i<iTotPags) 
+	{ 
+	%>
+	 <a href="ViewTimeSheet.jsp?iPagNo=<%=i%>&cPagNo=<%=i%>">>> Next</a> 
+	 <%
+	 }
+} 
+%> 
+<b>Rows <%=iStRsNo%> - <%=iEnRsNo%> Total Result <%=iTotRslts%></b> </div>
+
+</div>
+</td>
+</tr>
+</table>
+<%
+try
+{ 
+	if(psPgintn!=null)
+	{ 
+		psPgintn.close();
+		} 
+	if(rsPgin!=null)
+	{
+		rsPgin.close();
+		}	
+	if(psRwCn!=null)
+	{ 
+		psRwCn.close();
+		}
+	if(rsRwCn!=null)
+	{
+		rsRwCn.close();
+		} 
+	if(con!=null)
+	{
+		con.close(); 
+		} 
+	} 
+catch(Exception e)
+{ 
+	e.printStackTrace();
+	
+	}
+%>
+
 
 
 
@@ -219,24 +399,9 @@ Part u=PartDAO.getRecordById(Integer.parseInt(id));
 			</div>
 		</div>
 
-		<div class="fixed-action-btn horizontal click-to-toggle">
-			<a class="btn-floating btn-large red"> <i class="material-icons">menu</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-			</ul>
-		</div>
 
 		<footer>
-			<p>
-				All right reserved. Template by: <a
-					href="https://webthemez.com/admin-template/">WebThemez.com</a>
-			</p>
-
+			
 
 		</footer>
 	</div>

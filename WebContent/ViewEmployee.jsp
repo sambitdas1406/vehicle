@@ -129,6 +129,12 @@
 								<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
+								<li>
+									<a href="ViewTimeSheet.jsp">View TimeSheet</a>
+								</li>
 							</ul>
 						</li>
 				</ul>
@@ -158,7 +164,9 @@
 				<a href="AddEmployee.jsp" class="waves-effect waves-light btn green" style="float: right;">Add Employee </a>
 				<a href="AddSalary.jsp" class="waves-effect waves-light btn green" style="float: right;margin-right:60px;">Add Salary </a>
 		<a href="ViewSalary.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Salary </a>
+<a href="ViewLeaveEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Leave Employee </a>
 				
+			<a href="ViewTimeSheet.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View TimeSheet </a>
 				
 				
 				<br><br><br>

@@ -59,9 +59,9 @@ ps.setFloat(10, salary);
 int i = ps.executeUpdate();
 if(i > 0)
 {
+	response.sendRedirect("ViewEmployee.jsp");
 out.print("Record Updated Successfully");
 %>
-<jsp:forward page="ViewEmployee.jsp"></jsp:forward>
 <% 
 }
 else

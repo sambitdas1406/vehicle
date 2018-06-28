@@ -118,6 +118,9 @@
 									<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
 							</ul>
 						</li>
 					</ul>

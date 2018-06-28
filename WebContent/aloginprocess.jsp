@@ -13,8 +13,8 @@
     rs = st.executeQuery("select * from vehicle.adminlogin where uname='" + userid + "' and pass='" + pwd + "'");
     if (rs.next()) {
         session.setAttribute("userid", "plz sign in first");
+        response.sendRedirect("home1.jsp");
         %>
-        <jsp:forward page="home1.jsp"></jsp:forward>
         
         <% 
         //out.println("welcome " + userid);

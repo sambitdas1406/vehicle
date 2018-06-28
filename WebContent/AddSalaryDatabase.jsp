@@ -40,9 +40,9 @@ pstmt.setFloat(4, salary);
 
 int s= pstmt.executeUpdate();
 if(s>0){
+response.sendRedirect("AddSalary.jsp");
+
 %>
-<jsp:forward page="AddSalary.jsp"></jsp:forward>
-out.println("successfully inserted");
 <% 
 }
 else{

@@ -75,9 +75,9 @@ ps.setInt(15, pincode);
 int i = ps.executeUpdate();
 if(i > 0)
 {
+	response.sendRedirect("RecentInstalledVehicle.jsp");
 out.print("Record Updated Successfully");
 %>
-<jsp:forward page="RecentInstalledVehicle.jsp"></jsp:forward>
 <% 
 }
 else

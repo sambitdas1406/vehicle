@@ -60,7 +60,7 @@ $(document).ready(function() {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark" href="home.jsp"><i
+				<a class="navbar-brand waves-effect waves-dark" href="home1.jsp"><i
 					class="large material-icons">insert_chart</i> <strong
 					style="font-size: 14px;">Vehicle Management</strong></a>
 
@@ -134,6 +134,12 @@ $(document).ready(function() {
 								<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
+								<li>
+									<a href="ViewTimeSheet.jsp">View TimeSheet</a>
+								</li>
 							</ul>
 						</li>
 				</ul>
@@ -158,6 +164,8 @@ $(document).ready(function() {
 											<a href="home1.jsp" class="waves-effect waves-light btn green" style="float: left;">DashBoard </a>
 
 								<a href="invoice.jsp" class="waves-effect waves-light btn green" style="float: right;">Create Invoice </a>
+								<a href="ExportBill.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">Export Invoice </a>
+								
 								<br>
 								<br>
 								<br>
@@ -387,22 +395,11 @@ catch(Exception e)
 			</div>
 		</div>
 
-		<div class="fixed-action-btn horizontal click-to-toggle">
-			<a class="btn-floating btn-large red"> <i class="material-icons">menu</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-			</ul>
-		</div>
+		
 
 		<footer>
 			<p>
-				All right reserved. Template by: <a
-					href="https://webthemez.com/admin-template/">WebThemez.com</a>
+				
 			</p>
 
 

@@ -318,7 +318,7 @@ document.getElementById('job_no').value=finalSequence;
 				</div>
 				 															<a  href="home1.jsp" class="waves-effect waves-light btn green" style="float: left;margin-left: 50px;">DashBoard </a>
 				 								<a href="ViewEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Employee </a>
-				 				 								<a href="ViewSalary.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Salary </a>
+				 				 								<a href="ViewTimeSheet.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View TimeSheet </a>
 				 
 				 <br>
 				 <br>
@@ -349,17 +349,17 @@ ResultSet resultSet = null;
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from vehicle.salary where id="+id;
+String sql ="select * from vehicle.timesheet where id="+id;
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <div class="container">
-    <h1 align="center" style="color:#424bf4;"class="well">UPDATE SALARY TABLE</h1>
+    <h1 align="center" style="color:#424bf4;"class="well">UPDATE TIME SHEET</h1>
 	<div class="col-lg-12 well">
- <h3 align="center"style="color:#4f7202;">EMPLOYEE SALARY UPDATE FORM</h3><BR>
+ <h3 align="center"style="color:#4f7202;">EMPLOYEE TIMESHEET UPDATE FORM</h3><BR>
 	
 	<div class="row">
-				<form action="UpdateSalaryProcess.jsp" method="post"  >
+				<form action="UpdateTimeSheetProcess.jsp" method="post"  >
 				
 					<div class="col-sm-12">
 					
@@ -376,50 +376,121 @@ while(resultSet.next()){
                              </select>
 							</div>
 							<div class="col-sm-6 form-group">
-								Month
-							<select name="month" required>
-                            <option value="" selected>select..</option>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                            
-                        </select>
+								Job_No
+								<input type="number" placeholder="Enter Job_No Here.." value="<%=resultSet.getInt(3) %>" name="job_no" class="form-control">
 							</div>
+							
 						</div>	
 						<div class="row">
 							<div class="col-sm-6 form-group">
-									Year
-							<select name="year"required>
-                            <option value="" selected>select..</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                            
-                        </select>
+								Work Title
+								<input type="text"  placeholder="Enter Work Title Here.." value="<%=resultSet.getString(4) %>" name="title" class="form-control">
 							</div>
 							<div class="col-sm-6 form-group">
-								Salary
-								<input type="text" placeholder="Enter Salary Here.." name="salary" value="<%=resultSet.getString(5)%>" class="form-control">
+								Description
+								<input type="text"  placeholder="Enter Work Description Here.."  value="<%=resultSet.getString(8) %>" name="workdesc" class="form-control">
+							</div>
+							
+						</div>
+						<div class="row">
+						
+						<div class="col-sm-4 form-group">
+						Hour
+							<select name="hour" >
+            <option selected="selected" value="">Select Hour</option>
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        </div>
+        <div class="col-sm-4 form-group">
+        Minute
+        <select name="min">
+            <option selected="selected" value="">Select Minute</option>
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+        </select>
+        </div>
+    
+
+						</div>	
+						<div class="row">
+							
+							<div class="col-sm-6 form-group">
+								Date 
+								<input type="date" placeholder="Date "   value="<%=resultSet.getString(7) %>"id="date" name="date1" class="form-control" required>
 							</div>
 						</div>	
+						
+						
 						
 				
                     <input type="submit" name="submit" class="btn btn-success"class="submit action-button"  value="Submit" />		

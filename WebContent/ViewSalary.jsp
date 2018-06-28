@@ -134,6 +134,12 @@ $(document).ready(function() {
 								<li>
 									<a href="ViewSalary.jsp">View Salary Table</a>
 								</li>
+								<li>
+									<a href="ViewLeaveEmployee.jsp">View LeaveEmployee</a>
+								</li>
+								<li>
+									<a href="ViewTimeSheet.jsp">View TimeSheet</a>
+								</li>
 							</ul>
 						</li>
 				</ul>
@@ -159,6 +165,7 @@ $(document).ready(function() {
 								<a href="AddSalary.jsp" class="waves-effect waves-light btn green" style="float: right;">Add Salary </a>
 								<a href="ViewEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Employee </a>
 								<a href="AddEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">Add Employee </a>
+								<a href="exportcsv.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">Export CSV </a>
 								
 								
 								<br>
@@ -166,7 +173,7 @@ $(document).ready(function() {
 								<br>
 								
 
-    <h2 align="center"style="color:#424bf4;"class="well">SALARY  INFORMATION</h2>
+    <h3 align="center"style="color:#424bf4;"class="well">SALARY  INFORMATION</h3>
 <%!
 public int Converter(String str)
 {  
@@ -385,24 +392,9 @@ catch(Exception e)
 			</div>
 		</div>
 
-		<div class="fixed-action-btn horizontal click-to-toggle">
-			<a class="btn-floating btn-large red"> <i class="material-icons">menu</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-			</ul>
-		</div>
 
 		<footer>
-			<p>
-				All right reserved. Template by: <a
-					href="https://webthemez.com/admin-template/">WebThemez.com</a>
-			</p>
-
+			
 
 		</footer>
 	</div>
