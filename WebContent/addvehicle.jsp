@@ -163,10 +163,55 @@ document.getElementById('job_no').value=finalSequence;
 
 
 <script>
-
-
-
+function myfunction()                                   
+{
+    var email = document.forms["myform"]["emailid"];   
+    var phone = document.forms["myform"]["mobile_no"]; 
+    var address = document.forms["myform"]["address"]; 
+  
+  
+  
+    if (address.value == "")                              
+    {
+        window.alert("Please enter your address.");
+        name.focus();
+        return false;
+    }
+      
+    if (email.value == "")                                  
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+  
+    if (email.value.indexOf("@", 0) < 0)                
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+  
+    if (email.value.indexOf(".", 0) < 0)                
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+  
+    if (phone.value == "")                          
+    {
+        window.alert("Please enter your telephone number.");
+        phone.focus();
+        return false;
+    }
+  
+    return true;
+}
 </script>
+
+
+
 
 
 	
@@ -304,7 +349,7 @@ document.getElementById('job_no').value=finalSequence;
 			<div id="page-wrapper">
 				<div class="header"> 
 					<h1 class="page-header">
-						General Setting
+						Vehicle Setting
 					</h1>
 					<ol class="breadcrumb">
 						<li><a href="#">Home</a></li>
@@ -328,7 +373,7 @@ document.getElementById('job_no').value=finalSequence;
  <h3 align="center"style="color:#4f7202;">VEHICLE REGISTRATION  FORM</h3><BR>
 	
 	<div class="row">
-				<form action="adduser.jsp" method="post"  >
+				<form name="myform" action="adduser.jsp" method="post"   >
 				
 					<div class="col-sm-12">
 					
@@ -440,17 +485,7 @@ document.getElementById('job_no').value=finalSequence;
 
 
 					
-				<div class="fixed-action-btn horizontal click-to-toggle">
-					<a class="btn-floating btn-large red">
-						<i class="material-icons">menu</i>
-					</a>
-					<ul>
-						<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-						<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-						<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-						<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-					</ul>
-				</div>
+				
 
 				
 

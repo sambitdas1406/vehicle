@@ -22,7 +22,7 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Category</title>
+	<title>UserInfo</title>
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
@@ -51,7 +51,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark" href="home.jsp"><i class="large material-icons">insert_chart</i> <strong  style="font-size: 14px;">Vehicle Management</strong></a>
+				<a class="navbar-brand waves-effect waves-dark" href="home1.jsp"><i class="large material-icons">insert_chart</i> <strong  style="font-size: 14px;">Vehicle Management</strong></a>
 				
 				<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
 			</div>
@@ -167,102 +167,114 @@ if(!rs.next()) {
 
 %>
 <!-- PRINT STARTS HERE -->
-
+<!-- PRINT STARTS HERE -->
     <div class="container">
+  
       <div class="row">
         <div class="col-xs-6">
-         <p>User  Information Invoice </p>
+          <h3>
+            <a href="#">
+            <img src="logo.png">
+            Logo here
+            </a>
+          </h3>
         </div>
         <div class="col-xs-6 text-right">
-          <h1>User Information</h1>
-          <h1><small>Invoice Date  <%= new java.util.Date() %></small></h1>
+          <h3>USER INFORMATION</h3>
+          <h4><small>Invoice Date  <%= new java.util.Date() %></small></h4>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-5">
+        <div class="col-xs-6">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4>From: <a href="#">Your Name</a></h4>
             </div>
-            <div class="panel-body">
+            <div style="padding: 8px !important;" class="panel-body">
               <p>
-               JAGANNATH MOTOR <br>
+              <b> JAGANNATH MOTOR </b><br>
                 Authorised Service Centre<br>
-                Address:Nalco Square,<br>
+                Address:Nalco Square,
                   Semiliguda,Koraput
               </p>
             </div>
           </div>
         </div>
-        <div class="col-xs-5 col-xs-offset-2 text-right">
+<% %>
+        <div class="col-xs-6 ">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4>To : <a href="#">Client Name</a></h4>
             </div>
-            <div class="panel-body">
-               <p>
-                              <b>First Name:</b> <%= rs.getString(9) %> <br>
+            
+            
+            
+  <div style="padding: 8px !important;" class="panel-body">
+              <p>
+                              <b>First Name:</b> <%= rs.getString(10) %> <br>
               
-                <b> last Name: </b> <%= rs.getString(10) %> <br>
+                <b> last Name: </b> <%= rs.getString(11) %> <br>
                 
                 
-                    <b>Email_id: </b>  <%= rs.getString(11) %><br>
+                    <b>Email_id: </b>  <%= rs.getString(12) %><br>
                 
-                                 <b>Mobile_no: </b> <%= rs.getString(15) %> <br>
+                                 <b>Mobile_no: </b> <%= rs.getString(16) %> 
                 
                
               </p>
             </div>
+            
           </div>
         </div>
       </div>
-      <!-- / end client details section -->
      
-      
-      <div class="row">
-        <div class="col-xs-5">
+ 
+       <div class="row">
+        <div class="col-xs-6">
+        
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h4>Contact details</h4>
+              <h4>Contact Details</h4>
             </div>
-            <div class="panel-body">
-               <div class="panel-body">
-              Email :<br>
-               jagannathmotor.semiliguda@gmail.com <br><br>
-                  Mobile :9437138319 <br> <br>
+            <div style="padding: 8px !important;" class="panel-body">
+              Email : <br>jagannathmotor.semiliguda@gmail.com <br>
+                  Mobile :9437138319 <br> 
                   Twitter : <a href="#">@vehicle</a><br>
-            </div>
+                  
             </div>
           </div>
         </div>
-        <div class="col-xs-7">
+        <div class="col-xs-6">
           <div class="span7">
             <div class="panel panel-info">
               <div class="panel-heading">
-                <h4>Vehicle Details</h4>
+                <h4>Vehicle  Details</h4>
               </div>
-              <div class="panel-body">
-               <p>
-                 <b> job_no:</b>  <%= rs.getString(2) %> <br><br>
-                  <b> regdno:</b> <%= rs.getString(3) %><br>
-                  <b> model : </b><%= rs.getString(4) %><br>
-                  <b> mileage:</b><%= rs.getString(5) %><br>
-                  <b> chassis_no:</b><%= rs.getString(6) %><br>
-                  <b> engine_no:</b><%= rs.getString(7) %><br>
-                </p>
-                
+              <div style="padding: 8px !important;" class="panel-body">
+                <p style="display: inline; float: left;">
+                 <b> Job_No:</b>  <%= rs.getString(2) %> <br>
+                  <b>RegdNo:</b> <%= rs.getString(3) %><br>
+                  <b> Model : </b><%= rs.getString(4) %>
+                  </p>
+                  <p style="display: inline; float: right;">
+                  <b> Mileage:</b><%= rs.getString(5) %><br>
+                  <b> Chassis_no:</b><%= rs.getString(6) %><br>
+                  <b> Engine_no:</b><%= rs.getString(7) %>
+                  </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <%
+      }
+     %>
+     <!-- PRINT ENDS HERE -->
       <!-- PRINT ENDS HERE -->
  
-       <% 
-           } 
-       %>
-    
+      <br>
+      
+      <br>
   <input type="button" value="Print" onclick="mynewevt(); window.print();" />
         <script>
         function mynewevt(){        	

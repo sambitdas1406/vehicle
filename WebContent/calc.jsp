@@ -118,8 +118,7 @@
 				
 				<div id="page-inner">
 
-					<div class="row">
-	          <div class="input-field col s6">
+					
 	          
  <%
  Connection connnection=null;
@@ -398,16 +397,16 @@ if(!rs.next()) {
   
       <div class="row">
         <div class="col-xs-6">
-          <h1>
+          <h3>
             <a href="#">
             <img src="logo.png">
             Logo here
             </a>
-          </h1>
+          </h3>
         </div>
         <div class="col-xs-6 text-right">
-          <h1>INVOICE</h1>
-          <h1><small>Invoice Date  <%= new java.util.Date() %></small></h1>
+          <h3>INVOICE</h3>
+          <h4><small>Invoice Date  <%= new java.util.Date() %></small></h4>
         </div>
       </div>
       <div class="row">
@@ -416,7 +415,7 @@ if(!rs.next()) {
             <div class="panel-heading">
               <h4>From: <a href="#">Your Name</a></h4>
             </div>
-            <div class="panel-body">
+            <div style="padding: 8px !important;" class="panel-body">
               <p>
                JAGANNATH MOTOR <br>
                 Authorised Service Centre<br>
@@ -435,7 +434,7 @@ if(!rs.next()) {
             
             
             
-  <div class="panel-body">
+  <div style="padding: 8px !important;" class="panel-body">
               <p>
                               <b>First Name:</b> <%= rs.getString(10) %> <br>
               
@@ -516,10 +515,10 @@ if(!rs.next()) {
         <div class="col-xs-2 col-xs-offset-8">
           <p>
             <strong>
-            Sub Total : <br>
-            TAX : <br>
+            Sub Total :<br>
+            TAX :<br>
             Discount:<br>
-            Total : <br>
+            Total :<br>
             Total after Discount:<br>
            
             </strong>
@@ -529,34 +528,35 @@ if(!rs.next()) {
           <strong>
            <%=bill%> <br>
             N/A <br>
-           <%=disc %> <br>
-          <%=bill%> <br>
+           <%=disc %><br><br>
+          <%=bill%><br>
           <%=pay %><br>
            
           </strong>
         </div>
       </div>
        <div class="row">
-        <div class="col-xs-5">
+        <div class="col-xs-6">
+        
           <div class="panel panel-info">
             <div class="panel-heading">
               <h4>Contact Details</h4>
             </div>
-            <div class="panel-body">
-              Email : jagannathmotor.semiliguda@gmail.com <br><br>
+            <div style="padding: 8px !important;" class="panel-body">
+              Email : <br>jagannathmotor.semiliguda@gmail.com <br>
                   Mobile :9437138319 <br> <br>
                   Twitter : <a href="#">@vehicle</a><br>
                   
             </div>
           </div>
         </div>
-        <div class="col-xs-7">
+        <div class="col-xs-6">
           <div class="span7">
             <div class="panel panel-info">
               <div class="panel-heading">
                 <h4>Vehicle  Details</h4>
               </div>
-              <div class="panel-body">
+              <div style="padding: 8px !important;" class="panel-body">
                 <p>
                  <b> job_no:</b>  <%= rs.getString(2) %> <br>
                   <b> regdno:</b> <%= rs.getString(3) %><br>
@@ -582,15 +582,7 @@ if(!rs.next()) {
        
       </div>
     </div>
-	          </div>
-	        </div>
-					<div class="row">
-						<div class="col-md-12">
-							 
-							 
-                			</div>
-						</div>	
-					
+	         
 						
 						
 						

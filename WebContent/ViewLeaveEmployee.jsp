@@ -60,7 +60,7 @@ $(document).ready(function() {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark" href="home.jsp"><i
+				<a class="navbar-brand waves-effect waves-dark" href="home1.jsp"><i
 					class="large material-icons">insert_chart</i> <strong
 					style="font-size: 14px;">Vehicle Management</strong></a>
 

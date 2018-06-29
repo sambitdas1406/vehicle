@@ -146,7 +146,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark" href="home.jsp"><i class="large material-icons">insert_chart</i> <strong  style="font-size: 14px;">Vehicle Management</strong></a>
+				<a class="navbar-brand waves-effect waves-dark" href="home1.jsp"><i class="large material-icons">insert_chart</i> <strong  style="font-size: 14px;">Vehicle Management</strong></a>
 				
 				<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
 			</div>
@@ -259,12 +259,9 @@ pstmt.setInt(2, jobno);
 
 
 rs=pstmt.executeQuery();
-while(rs.next()){
+if(rs.next()){
 	
 
-if(!rs.next()) {
-    out.println("Sorry, could not find that vehicle  . ");
-} else {
 
 %>
 <!-- PRINT STARTS HERE -->
@@ -332,10 +329,8 @@ if(!rs.next()) {
                     <b>Mileage:</b><%=rs.getString(5) %><br>
                     <b>Service Date:</b><%=rs.getString(9) %><br>
                 </td>
-                
-                <td>
-                   N/A
-                </td>
+                 <%} %>
+             
             </tr>
             
             <tr class="heading">
@@ -347,6 +342,28 @@ if(!rs.next()) {
                     <!--  Price-->
                 </td>
             </tr>
+                            
+                 	            <%
+String id11= request.getParameter("jobno");
+int jobno1=Integer.parseInt(id11);
+Connection conn=null;
+PreparedStatement pstmt1=null;
+ResultSet rss=null;
+String qry1="SELECT * FROM vehicle.db1, vehicle.invoice WHERE  db1.job_no =? and invoice.jobno=?";
+Class.forName("com.mysql.jdbc.Driver");
+conn=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
+pstmt1=con.prepareStatement(qry1);
+pstmt1.setInt(1, jobno);
+pstmt1.setInt(2, jobno);
+
+
+rss=pstmt1.executeQuery();
+while(rss.next()){
+	
+
+
+%>
+   
             
          <tr class="item">
                 <td>
@@ -354,7 +371,7 @@ if(!rs.next()) {
                 </td>
                 
                 <td>
-                   <%=rs.getDate(23) %>
+                   <%=rss.getDate(23) %>
                 </td>
             </tr>
             
@@ -364,7 +381,7 @@ if(!rs.next()) {
                 </td>
                 
                 <td>
-                  <%=rs.getString(20) %>
+                  <%=rss.getString(20) %>
                 </td>
             </tr>
             
@@ -374,7 +391,7 @@ if(!rs.next()) {
                 </td>
                 
                 <td>
-                     <%=rs.getString(21) %>
+                     <%=rss.getString(21) %>
                 </td>
             </tr>
              
@@ -384,28 +401,26 @@ if(!rs.next()) {
                 </td>
                 
                 <td>
-                     <%=rs.getString(25) %>
+                     <%=rss.getString(25) %>
                 </td>
             </tr>
             <tr class="class="total">
                 <td><b>Total Bill After Discount</b></td>
                 
                 <td>
-                   <%=rs.getString(26) %>/<b>rs</b>
+                  <b>Rs.</b> <%=rss.getString(26) %>/-
                 </td>
             </tr>
-            
+               <%} %>
         </table>
     </div>
    
    
       <!-- PRINT ENDS HERE -->
  
-       <% 
-           } 
-       %>
        
-       <%} %>
+       
+      
     
     <br>
     <br>

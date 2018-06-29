@@ -7,8 +7,9 @@
 <title>Add User Success</title>
 </head>
 <body>
- 
+ <%
+ response.sendRedirect("addvehicle.jsp");
+ %>
 
-<jsp:include page="addvehicle.jsp"></jsp:include> 
 </body>
 </html>
