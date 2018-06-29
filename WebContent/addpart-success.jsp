@@ -8,6 +8,9 @@
 </head>
 <body>
 <p>Record successfully saved!</p>  
-<jsp:include page="partform.jsp"></jsp:include>  
+<%
+out.println("record successfully inserted");
+response.sendRedirect("partform.jsp");
+%>
 </body>
 </html>

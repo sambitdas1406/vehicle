@@ -309,7 +309,7 @@ if(iTotRslts!=0)
  	{
 
 %>
-<a href="viewsellpart.jsp?iPagNo=<%=prePageNo%>&cPagNo=<%=prePageNo%>"><< Previous</a>
+<a href="ViewSalary.jsp?iPagNo=<%=prePageNo%>&cPagNo=<%=prePageNo%>"><< Previous</a>
 
 		<%
         }
@@ -319,21 +319,21 @@ if(iTotRslts!=0)
 		if(i==((iPagNo/iSwRws)+1))
       	{
       	%>
-<a href="viewsellpart.jsp?iPagNo=<%=i%>" style="cursor:pointer;color:red"><b><%=i%></b></a>
+<a href="ViewSalary.jsp?iPagNo=<%=i%>" style="cursor:pointer;color:red"><b><%=i%></b></a>
 
 <%
 } 
 		else if(i<=iTotPags) 
 		{ 
 		%> 
-		<a href="viewsellpart.jsp?iPagNo=<%=i%>"><%=i%></a> 
+		<a href="ViewSalary.jsp?iPagNo=<%=i%>"><%=i%></a> 
 		<% 
 		}
 } 
 	if(iTotPags>iTotSrhRcrds&& i<iTotPags) 
 	{ 
 	%>
-	 <a href="viewsellpart.jsp?iPagNo=<%=i%>&cPagNo=<%=i%>">>> Next</a> 
+	 <a href="ViewSalary.jsp?iPagNo=<%=i%>&cPagNo=<%=i%>">>> Next</a> 
 	 <%
 	 }
 } 

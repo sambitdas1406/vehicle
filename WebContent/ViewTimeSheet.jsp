@@ -250,7 +250,7 @@ if(rsRwCn.next())
 	 <td>EmployeeId</td>
 	 <td>Job_No</td>
 	 	 <td>title</td>
-	 	 <td>Hour</td>
+	 	 <td>  Hour</td>
 	 	  <td>Date</td>
 	 	 <td>Description</td>
 	 	 <td>Action</td>
@@ -261,7 +261,7 @@ if(rsRwCn.next())
 		String h = rsPgin.getString("hour");
 		String m = rsPgin.getString("min");
 		//String ampm = rsPgin.getString("ampm");
-		String time = h+":"+m; 
+		String time = h+" hour"+" - "+m+" min"; 
 		
 %>
 <tr>

@@ -128,21 +128,16 @@
 			<div id="page-wrapper">
 				<div class="header"> 
 					<h1 class="page-header">
-						General Setting
 					</h1>
-					<ol class="breadcrumb">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Site Setting</a></li>
-						<li class="active">General Setting </li>
-					</ol> 
+					
 
 				</div>
 				 <h3 align="center" style="color:#4f7202;">VEHICLE REGISTRATION EDIT FORM</h3> 
 				 
 				<div id="page-inner">
 <%  
-String id=request.getParameter("job_id");
-User u=UserDao.getRecordById(Integer.parseInt(id));  
+String job_id=request.getParameter("job_id");
+User u=UserDao.getRecordById(Integer.parseInt(job_id));  
 //edituser.jsp
               /*
                * job_id; job_no; regd_no;date; model; mileage; chassis_no,engine_no
@@ -155,7 +150,7 @@ User u=UserDao.getRecordById(Integer.parseInt(id));
  <h3 align="center"style="color:#4f7202;"> EDIT VEHICLE REGISTRATION  FORM</h3><BR>
 	
 	<div class="row">
-				<form action="edituser.jsp" method="post"  >
+				<form action="EditVehicle.jsp" method="post"  >
 				
 					<div class="col-sm-12">
 					
@@ -188,11 +183,11 @@ User u=UserDao.getRecordById(Integer.parseInt(id));
 							</div>
 							<div class="col-sm-6 form-group">
 								Manufacturing_Date
-								<input type="date"  id="date" name="mdate" value="<%=u.getMdate() %> "class="form-control">
+								<input type="date"  id="date" name="mdate" value="<%=u.getMdate() %> "class="form-control"required>
 							</div>
 							<div class="col-sm-6 form-group">
 								Service Date
-								<input type="date"  id="date" name="sdate" value="<%=u.getSdate() %>"class="form-control">
+								<input type="date"  id="date" name="sdate" value="<%=u.getSdate() %>"class="form-control"required>
 							</div>
 						</div>	
 						   
@@ -213,17 +208,6 @@ User u=UserDao.getRecordById(Integer.parseInt(id));
   
   
 			
-				<div class="fixed-action-btn horizontal click-to-toggle">
-					<a class="btn-floating btn-large red">
-						<i class="material-icons">menu</i>
-					</a>
-					<ul>
-						<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-						<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-						<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-						<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-					</ul>
-				</div>
 
 				
 

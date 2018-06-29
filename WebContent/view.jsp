@@ -192,7 +192,7 @@
 						<th>mileage</th>
 						<th>chassis_no</th>
 						<th>engine_no</th>
-						
+						<th>Manufacture Date</th>
 
 						<th>Action</th>
 						
@@ -209,6 +209,7 @@
 							<td>${u.getMileage()}</td>
 							<td>${u.getChassis_no()}</td>
 							<td>${u.getEngine_no()}</td>
+							<td>${u.getMdate()}</td>
 							
 
 							<td style="padding:12px 20px;    margin-right: 10px;"class="btn red"><a href="deleteuser.jsp?job_id=${u.getJob_id()}"><i class="fa fa-trash red"></i></a></td>

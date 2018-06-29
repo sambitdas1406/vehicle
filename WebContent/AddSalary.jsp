@@ -344,7 +344,7 @@ rs = statement.executeQuery(qry);
 
 
 <div class="container">
-    <h1 align="center" style="color:#424bf4;"class="well">SALARY TABLE</h1>
+    <h3 align="center" style="color:#424bf4;"class="well">SALARY TABLE</h3>
 	<div class="col-lg-12 well">
  <h3 align="center"style="color:#4f7202;">EMPLOYEE SALARY  FORM</h3><BR>
 	
@@ -365,7 +365,7 @@ rs = statement.executeQuery(qry);
 							</div>
 							<div class="col-sm-6 form-group">
 								Month
-							<select name="month">
+							<select name="month"required>
                             <option value="" selected>select..</option>
                             <option value="January">January</option>
                             <option value="February">February</option>
@@ -386,7 +386,7 @@ rs = statement.executeQuery(qry);
 						<div class="row">
 							<div class="col-sm-6 form-group">
 									Year
-							<select name="year">
+							<select name="year"required>
                             <option value="" selected>select..</option>
                             <option value="2018">2018</option>
                             <option value="2019">2019</option>
@@ -405,7 +405,7 @@ rs = statement.executeQuery(qry);
 							</div>
 							<div class="col-sm-6 form-group">
 								Salary
-								<input type="text" placeholder="Enter Salary Here.." name="salary" class="form-control">
+								<input type="number" placeholder="Enter Salary Here.." name="salary" step="any" class="form-control"  required>
 							</div>
 						</div>	
 						

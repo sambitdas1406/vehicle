@@ -13,10 +13,37 @@
 <head>
 <meta charset="utf-8" />
 
+<script type="text/javascript">
+
+function msg()
+{
+	var v=confirm("are you sure");
+	if(v==true)
+		{
+		alert("ok");
+		}
+	else
+		{
+		alert("cancle");
+		}
+}
+</script>
 
 
+<script language="javascript">
+function deleteRecord(eid){
+    var doIt=confirm('Do you want to delete the record?');
+  if(doIt){
+   var f=document.form;
+    f.method="post";
+    f.action='DeleteEmployee.jsp?eid='+eid;
+    f.submit();
+    }
+  else{
 
-
+    }
+}
+</script>
 
 
 
@@ -169,7 +196,7 @@
 			<a href="ViewTimeSheet.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View TimeSheet </a>
 				
 				
-				<br><br><br>
+				<br><br><br><br><br>
 				<%@page import="java.sql.*" %>
 				<%
  try{
@@ -186,6 +213,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & passwor
 statement = con.createStatement();
 rs = statement.executeQuery(qry);
 %>
+<form name="form">
 <table id="example" class="table table-hover" style="width:100%"><tr>
 <td>Employee Id</td>
 <td>FirstName</td>
@@ -216,8 +244,7 @@ while (rs.next()) {
 <TD><%=rs.getInt(10)%></TD>
 <TD><%=rs.getFloat(11)%></TD>
 <td style="padding:12px 20px;    margin-right: 10px;"class="btn orange"><a href="UpdateEmployee.jsp?eid=<%=rs.getString(1)%>"><i style="color:#ffff" class="fa fa-edit" ></i></a></td>
-<td style="padding:12px 20px;    margin-right: 10px;"class="btn red"><a href="DeleteEmployee.jsp?eid=<%=rs.getString(1)%>"><i class="fa fa-trash red"></i></a></td>
-
+<td style="padding:12px 20px;    margin-right: 10px;"class="btn red"onclick="deleteRecord(<%=rs.getString(1)%>);"><i class="fa fa-trash red" ></i></a></td>
 
 
 
@@ -238,8 +265,7 @@ out.println("Unable to connect to database.");
 %>
 </TABLE>
 				
-				
-				
+	</form>			
 				
 		<!--  <td><a href="deleteuser.jsp?id=${u.getId()}">Delete</a></td></tr>  
 		
@@ -254,24 +280,9 @@ out.println("Unable to connect to database.");
 			</div>
 		</div>
 
-		<div class="fixed-action-btn horizontal click-to-toggle">
-			<a class="btn-floating btn-large red"> <i class="material-icons">menu</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-				<li><a class="btn-floating yellow darken-1"><i
-						class="material-icons">format_quote</i></a></li>
-				<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-				<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-			</ul>
-		</div>
-
+	
 		<footer>
-			<p>
-				All right reserved. Template by: <a
-					href="https://webthemez.com/admin-template/">WebThemez.com</a>
-			</p>
-
+			
 
 		</footer>
 	</div>

@@ -131,6 +131,7 @@ public class UserDao
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				u = new User();
+				u.setJob_id(rs.getInt("job_id"));
 				u.setJob_no(rs.getInt("job_no"));
 				u.setRegd_no(rs.getString("regd_no"));
 				u.setModel(rs.getString("model"));
