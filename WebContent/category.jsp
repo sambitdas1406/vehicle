@@ -210,7 +210,7 @@ function validate()
                 <tr><td><font style="color: navy;">Find Past InforMation:-</font>
             Please enter the JOB_NO of the User you want to find Past Information:
             <BR>
-            <INPUT type="text" align="right" name="jobno"  placeholder="type JOB_NO number" required>
+            <INPUT type="number" align="right" name="jobno"  placeholder="type JOB_NO number" required>
             <BR>
             <INPUT TYPE="SUBMIT" class="btn btn-default" value="Submit">
         </FORM>	

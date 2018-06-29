@@ -4,6 +4,9 @@
 <html>
 <body>
 <% 
+File file  = new File("f:\\sellpart.csv");  
+file.createNewFile(); 
+
 String filename = "f:\\csv\\sellpart.csv";
 Connection conn = null;
 String url = "jdbc:mysql://localhost:3306/";
@@ -14,7 +17,7 @@ String password = "sambit";
 Statement stmt;
 try
 {
-FileWriter fw = new FileWriter(filename);
+FileWriter fw = new FileWriter(file);
 fw.append("part");
 fw.append(',');
 fw.append("price");
