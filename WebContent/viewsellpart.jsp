@@ -260,7 +260,7 @@ if(rsRwCn.next())
  <TD><%=rsPgin.getInt(1)%></TD>
 <TD><%=rsPgin.getString(2)%></TD>
 <TD><%=rsPgin.getInt(3)%></TD>
-<TD><%=rsPgin.getInt(5)%></TD>
+<TD><%=rsPgin.getString(5)%></TD>
 <TD><%=rsPgin.getDate(6)%></TD>
 <TD><%=rsPgin.getTime(7)%></TD>
 

@@ -348,7 +348,7 @@ if( request.getParameter("partname")!=null &&request.getParameter("price")!=null
   
   <tr>
   <td>JOB NO: </td>
-  <td><input type="number" name="job_no" value="" size="20" style="width: 150px;"required/></td>
+  <td><input type="text" name="job_no" value="" size="20" style="width: 150px;"required/></td>
  </tr>
   <br>
   

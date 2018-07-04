@@ -377,7 +377,7 @@ while(resultSet.next()){
 							</div>
 							<div class="col-sm-6 form-group">
 								Job_No
-								<input type="number" placeholder="Enter Job_No Here.." value="<%=resultSet.getInt(3) %>" name="job_no" class="form-control">
+								<input type="text" placeholder="Enter Job_No Here.." value="<%=resultSet.getString(3) %>" name="job_no" class="form-control">
 							</div>
 							
 						</div>	

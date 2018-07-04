@@ -205,7 +205,7 @@ rs = statement.executeQuery(qry);
 							</div>
 							<div class="col-sm-6 form-group">
 								Job_No
-								<input type="number" placeholder="Enter Job_No Here.."  name="job_no" class="form-control">
+								<input type="text" placeholder="Enter Job_No Here.."  name="job_no" class="form-control">
 							</div>
 							
 						</div>	

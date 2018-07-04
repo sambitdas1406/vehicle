@@ -373,7 +373,7 @@ function myfunction()
  <h3 align="center"style="color:#4f7202;">VEHICLE REGISTRATION  FORM</h3><BR>
 	
 	<div class="row">
-				<form name="myform" action="adduser.jsp" method="post"   >
+				<form name="myform" action="addvehicleDB.jsp" method="post"   >
 				
 					<div class="col-sm-12">
 					
@@ -468,7 +468,7 @@ function myfunction()
 					</div>
 					</div>
 				
-            <input type="submit" name="submit" class="btn btn-success"class="submit action-button"  onclick="random()"value="Submit" />		
+            <input type="submit" name="submit" class="btn btn-success"class="submit action-button"  value="Submit" />		
                         <input type="reset" name="reset" class="btn btn-danger" value="reset" />				
             		
 					</div>

@@ -22,8 +22,8 @@ try {
 	
          String eid=request.getParameter("eid");
          
-         String jobno1=request.getParameter("job_no");
-         int jobno=Integer.parseInt(jobno1);
+         String jobno=request.getParameter("job_no");
+         //int jobno=Integer.parseInt(jobno1);
          
          String title=request.getParameter("title");
          String desc1=request.getParameter("workdesc");
@@ -57,7 +57,7 @@ System.out.println("connection created");
 pstmt=con.prepareStatement(qry);
 
 pstmt.setString(1, eid);
-pstmt.setInt(2, jobno);
+pstmt.setString(2, jobno);
 pstmt.setString(3, title);
 
 //pstmt.setString(3, title);

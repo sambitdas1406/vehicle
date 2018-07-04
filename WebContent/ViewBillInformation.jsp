@@ -262,7 +262,7 @@ if(rsRwCn.next())
 %>
 <tr>
 <TD><%=rsPgin.getInt(1)%></TD>
-<TD><%=rsPgin.getInt(2)%></TD>
+<TD><%=rsPgin.getString(2)%></TD>
 <TD><%=rsPgin.getFloat(3)%></TD>
 <TD><%=rsPgin.getInt(4)%></TD>
 <TD><%=rsPgin.getInt(5)%></TD>

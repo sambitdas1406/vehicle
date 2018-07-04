@@ -19,8 +19,8 @@ int id=Integer.parseInt(id1);
 
 String eid=request.getParameter("eid");
 
-String jobno1=request.getParameter("job_no");
-int jobno=Integer.parseInt(jobno1);
+String jobno=request.getParameter("job_no");
+//int jobno=Integer.parseInt(jobno1);
 
 String title=request.getParameter("title");
 String desc1=request.getParameter("workdesc");
@@ -49,7 +49,7 @@ con = DriverManager.getConnection(url,user,psw);
 //eid,jobno,title,hour,min,ampm,date,desc1
 String sql="Update vehicle.timesheet  set jobno=?,title=?,hour=?,min=?, date=?,desc1=? where id="+id;
 ps = con.prepareStatement(sql);
-ps.setInt(1,jobno);
+ps.setString(1,jobno);
 ps.setString(2, title);
 ps.setInt(3, hour);
 ps.setInt(4, min);

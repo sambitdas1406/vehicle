@@ -190,9 +190,9 @@
  		
  		//
  		//logic for inserting job_no 
- 		    String job1 =request.getParameter("job_no");
+ 		    String job =request.getParameter("job_no");
  				
-           int job=Integer.parseInt(job1);
+         //  int job=Integer.parseInt(job1);
  		
  		
  		   //logic  for insert current date and time
@@ -276,7 +276,7 @@
   
   
   
-  int s=Integer.parseInt(pn);
+  //int s=Integer.parseInt(pn);
   
   //int q=Integer.parseInt(qnty);
   float q=add;
@@ -305,8 +305,8 @@
  <%
  try{
  //job_no,part,labour,discount,date,limit
- String job_no1=request.getParameter("job_no");
- int jobno=Integer.parseInt(job_no1);
+ String jobno=request.getParameter("job_no");
+ //int jobno=Integer.parseInt(job_no1);
  
  //String part1=request.getParameter("add");
  //int partvalue=Integer.parseInt(part1);
@@ -345,7 +345,7 @@ con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & passwor
 //System.out.println("connection created");
 pstmt=con.prepareStatement(qry);
 
-pstmt.setInt(1,jobno);
+pstmt.setString(1,jobno);
 pstmt.setFloat(2,partvalue);
 pstmt.setInt(3,labourcharge);
 pstmt.setInt(4,discountprice);
@@ -368,7 +368,7 @@ int n= pstmt.executeUpdate();
   
   	            <%
 String id1= request.getParameter("job_no");
-int job_no=Integer.parseInt(id1);
+//int job_no=Integer.parseInt(id1);
 Connection con=null;
 PreparedStatement pstmt=null;
 ResultSet rs=null;
@@ -382,7 +382,7 @@ String qry="select * from vehicle.db1 where job_no=?";
 Class.forName("com.mysql.jdbc.Driver");
 con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
 pstmt=con.prepareStatement(qry);
-pstmt.setInt(1, job_no);
+pstmt.setString(1, id1);
 rs=pstmt.executeQuery();
 if(!rs.next()) {
 	response.sendRedirect("invoice.jsp");
@@ -398,9 +398,7 @@ if(!rs.next()) {
       <div class="row">
         <div class="col-xs-6">
           <h3>
-            <a href="#">
-            <img src="logo.png">
-            Logo here
+            <img src="images/category/logo.png" width="100" height="100">
             </a>
           </h3>
         </div>
@@ -571,6 +569,8 @@ if(!rs.next()) {
       <%
       }
      %>
+     <br>
+     <br>
      <!-- PRINT ENDS HERE -->
         <input type="button" value="Print" onclick="mynewevt(); window.print();" />
         <script>

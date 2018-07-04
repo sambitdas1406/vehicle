@@ -117,7 +117,7 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Category</title>
+	<title>PastInformation</title>
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
@@ -245,8 +245,8 @@
 					<div class="row">
 	          <div class="input-field col s6">
 	            <%
-String id1= request.getParameter("jobno");
-int jobno=Integer.parseInt(id1);
+String jobno= request.getParameter("jobno");
+//int jobno=Integer.parseInt(id1);
 Connection con=null;
 PreparedStatement pstmt=null;
 ResultSet rs=null;
@@ -254,8 +254,8 @@ String qry="SELECT * FROM vehicle.db1, vehicle.invoice WHERE  db1.job_no =? and 
 Class.forName("com.mysql.jdbc.Driver");
 con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
 pstmt=con.prepareStatement(qry);
-pstmt.setInt(1, jobno);
-pstmt.setInt(2, jobno);
+pstmt.setString(1, jobno);
+pstmt.setString(2, jobno);
 
 
 rs=pstmt.executeQuery();
@@ -273,7 +273,7 @@ if(rs.next()){
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="#" style="width:100%; max-width:300px;">
+                                <img src="images/category/logo.png" width="100" height="100">
                             </td>
                             
                             <td>
@@ -345,7 +345,7 @@ if(rs.next()){
                             
                  	            <%
 String id11= request.getParameter("jobno");
-int jobno1=Integer.parseInt(id11);
+//int jobno1=Integer.parseInt(id11);
 Connection conn=null;
 PreparedStatement pstmt1=null;
 ResultSet rss=null;
@@ -353,8 +353,8 @@ String qry1="SELECT * FROM vehicle.db1, vehicle.invoice WHERE  db1.job_no =? and
 Class.forName("com.mysql.jdbc.Driver");
 conn=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root & password=sambit");
 pstmt1=con.prepareStatement(qry1);
-pstmt1.setInt(1, jobno);
-pstmt1.setInt(2, jobno);
+pstmt1.setString(1, jobno);
+pstmt1.setString(2, jobno);
 
 
 rss=pstmt1.executeQuery();

@@ -207,7 +207,7 @@ while (result.next()) {
 %>
 <TR>
 <TD><%=result.getInt(1)%></TD>
-<TD><%=result.getInt(2)%></TD>
+<TD><%=result.getString(2)%></TD>
 <TD><%=result.getString(3)%></TD>
 <TD><%=result.getString(4)%></TD>
 

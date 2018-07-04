@@ -31,7 +31,7 @@ public class UserDao
 			//job_no,regd_no,mdate, sdate ,model,mileage,chassis_no,engine_no,firstname,
 			//lastname,mobile_no,gender,emailid,address,pincode,adhar
 			
-			ps.setInt(1, u.getJob_no());
+			ps.setString(1, u.getJob_no());
 			ps.setString(2, u.getRegd_no());
 			ps.setString(3, u.getModel());
 			ps.setDouble(4, u.getMileage());
@@ -79,7 +79,7 @@ public class UserDao
 				User u = new User();
 				u.setJob_id(rs.getInt("job_id"));
 
-				u.setJob_no(rs.getInt("job_no"));
+				u.setJob_no(rs.getString("job_no"));
 				u.setRegd_no(rs.getString("regd_no"));
 				u.setModel(rs.getString("model"));
 				u.setMileage(rs.getDouble("mileage"));
@@ -132,7 +132,7 @@ public class UserDao
 			while (rs.next()) {
 				u = new User();
 				u.setJob_id(rs.getInt("job_id"));
-				u.setJob_no(rs.getInt("job_no"));
+				u.setJob_no(rs.getString("job_no"));
 				u.setRegd_no(rs.getString("regd_no"));
 				u.setModel(rs.getString("model"));
 				u.setMileage(rs.getDouble("mileage"));
@@ -219,7 +219,7 @@ public class UserDao
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				u = new User();
-				u.setJob_no(rs.getInt("job_no"));
+				u.setJob_no(rs.getString("job_no"));
 				u.setRegd_no(rs.getString("regd_no"));
 				u.setModel(rs.getString("model"));
 				u.setMileage(rs.getDouble("mileage"));

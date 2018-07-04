@@ -174,8 +174,7 @@ if(!rs.next()) {
         <div class="col-xs-6">
           <h3>
             <a href="#">
-            <img src="logo.png">
-            Logo here
+           <img src="images/category/logo.png" width="100" height="100">
             </a>
           </h3>
         </div>
@@ -273,6 +272,10 @@ if(!rs.next()) {
       <!-- PRINT ENDS HERE -->
  
       <br>
+      <br>
+      <br>
+      <br>
+      <Br>
       
       <br>
   <input type="button" value="Print" onclick="mynewevt(); window.print();" />

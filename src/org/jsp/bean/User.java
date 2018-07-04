@@ -4,7 +4,7 @@ package org.jsp.bean;
 
 public class User 
 {   private int job_id;
-	private int job_no; 
+	private String job_no; 
 	private String regd_no;
     private String mdate,sdate;
 
@@ -21,10 +21,10 @@ public class User
 	public void setJob_id(int job_id) {
 		this.job_id = job_id;
 	}
-	public int getJob_no() {
+	public String getJob_no() {
 		return job_no;
 	}
-	public void setJob_no(int job_no) {
+	public void setJob_no(String job_no) {
 		this.job_no = job_no;
 	}
 	public String getRegd_no() {
