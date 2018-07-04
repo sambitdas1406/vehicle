@@ -412,7 +412,7 @@ while(resultSet.next()){
 						</div>					
 						<div class="form-group">
 							Address
-							<textarea placeholder="Enter Address Here.." value="<%=resultSet.getString(15) %>" name="address" rows="3" class="form-control" required></textarea>
+							<textarea placeholder="Enter Address Here.."  name="address" rows="3" class="form-control" required><%=resultSet.getString(15) %></textarea>
 						</div>	
 						<div class="row">
 							<div class="col-sm-4 form-group">

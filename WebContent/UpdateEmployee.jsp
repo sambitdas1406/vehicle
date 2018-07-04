@@ -233,7 +233,7 @@ if (rs.next()) {
 										
 						<div class="form-group">
 							Address
-							<textarea placeholder="Enter Address Here.." value="<%=rs.getString(8) %>" name="address" rows="3"  class="form-control"></textarea>
+							<textarea placeholder="Enter Address Here.."  name="address" rows="3"  class="form-control"><%=rs.getString(8) %></textarea>
 						</div>	
 						<div class="row">
 								

@@ -352,6 +352,7 @@ connection = DriverManager.getConnection(connectionUrl+database, userid, passwor
 statement=connection.createStatement();
 String sql ="select * from vehicle.leave where id="+id;
 resultSet = statement.executeQuery(sql);
+
 while(resultSet.next()){
 %>
 <div class="container">
@@ -380,7 +381,7 @@ while(resultSet.next()){
 						</div>	
 						<div class="form-group">
 							Leave Reason
-							<textarea placeholder="Enter Reason Here.." name="reason" rows="3"  class="form-control"required></textarea>
+							<textarea placeholder="Enter Reason Here.." name="reason"  rows="3"  class="form-control"required><%=resultSet.getString(3)%></textarea>
 						</div>
 						<div class="row">
 							
@@ -395,16 +396,48 @@ while(resultSet.next()){
 						</div>	
 						<div class="row">
 			
+			
 							<div class="col-sm-4 form-group">
 								Status
-								 <input type="radio" name="leave" value ="approved " placeholder="status"style="position:relative; opacity:1;    left: 0px;
+								<%
+								//String status=null;
+								//String status1=null;
+								//String status1="rejected";
+								//String status2=null;
+							//	String  status2="approved";
+                                 
+								 //String status = resultSet.getString(6);
+								 
+								 %>
+								
+								
+							<%
+							String status1="rejected";
+							//String status2=null;
+							String  status2=new String("approved");
+                             
+							 String status = resultSet.getString(6);
+							if(status.equals(status2)) {%>
+								 <input type="radio" name="leave" value ="approved" placeholder="status"style="position:relative; opacity:1;    left: 0px;
                                height: 17px;
                                width: 15px;
-                               display: inline;" required/>Approved
-        <input type="radio" name="leave" value ="rejected " placeholder="0"style="position:relative; opacity:1;    left: 0px;
-                              height: 17px;
-                              width: 15px;
-                              display: inline;" />Rejected
+                               display: inline;"checked/>Approved
+                               
+                        <%}else {%>        
+<input type="radio" name="leave" value ="approved" placeholder="status"style="position:relative; opacity:1;    left: 0px;
+                               height: 17px;
+                               width: 15px;
+                               display: inline;"/>Approved<%} %>
+                               
+                               
+        <input type="radio" name="leave" value ="rejected " placeholder="0" style="position:relative; opacity:1;    left: 0px;
+                               height: 17px;
+                               width: 15px;
+                               display: inline;"/>Rejected
+                            <!--    <input type="radio" name="leave" value ="rejected " placeholder="0" style="position:relative; opacity:1;    left: 0px;
+                               height: 17px;
+                               width: 15px;
+                               display: inline;"/>Rejected -->
 							</div>
 							
 						</div>	

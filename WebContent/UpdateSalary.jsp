@@ -378,7 +378,7 @@ while(resultSet.next()){
 							<div class="col-sm-6 form-group">
 								Month
 							<select name="month" required>
-                            <option value="" selected>select..</option>
+                            <option value="<%=resultSet.getString(3)%>" selected><%=resultSet.getString(3)%></option>
                             <option value="January">January</option>
                             <option value="February">February</option>
                             <option value="March">March</option>
@@ -399,7 +399,7 @@ while(resultSet.next()){
 							<div class="col-sm-6 form-group">
 									Year
 							<select name="year"required>
-                            <option value="" selected>select..</option>
+                            <option value="<%=resultSet.getString(4)%>" selected><%=resultSet.getString(4)%></option>
                             <option value="2018">2018</option>
                             <option value="2019">2019</option>
                             <option value="2020">2020</option>

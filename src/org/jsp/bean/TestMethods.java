@@ -16,7 +16,7 @@ public class TestMethods {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Integer job_id = 1111;
+		Integer job_id = 0;
 		StringBuilder job_id_as_str = new StringBuilder();
 		if(null != job_id) {
 			System.out.println(job_id.toString().length());

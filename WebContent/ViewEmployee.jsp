@@ -189,7 +189,6 @@ function deleteRecord(eid){
 				<a  href="home1.jsp" class="waves-effect waves-light btn green" style="float: left;margin-left: 10px;">DashBoard </a>
 				
 				<a href="AddEmployee.jsp" class="waves-effect waves-light btn green" style="float: right;">Add Employee </a>
-				<a href="AddSalary.jsp" class="waves-effect waves-light btn green" style="float: right;margin-right:60px;">Add Salary </a>
 		<a href="ViewSalary.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Salary </a>
 <a href="ViewLeaveEmployee.jsp" class="waves-effect waves-light btn green" style="float: right; margin-right:60px;">View Leave Employee </a>
 				

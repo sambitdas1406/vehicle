@@ -397,7 +397,7 @@ while(resultSet.next()){
 						<div class="col-sm-4 form-group">
 						Hour
 							<select name="hour" >
-            <option selected="selected" value="">Select Hour</option>
+            <option selected="selected" value="<%=resultSet.getString(5) %>"><%=resultSet.getString(5) %></option>
             <option value="00">00</option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -416,7 +416,7 @@ while(resultSet.next()){
         <div class="col-sm-4 form-group">
         Minute
         <select name="min">
-            <option selected="selected" value="">Select Minute</option>
+            <option selected="selected" value="<%=resultSet.getString(6) %>"><%=resultSet.getString(6) %></option>
             <option value="00">00</option>
             <option value="01">01</option>
             <option value="02">02</option>
