@@ -355,7 +355,7 @@ if( request.getParameter("partname")!=null &&request.getParameter("price")!=null
   <br>
   <tr>
   <td>labour charge: </td>
-  <td><input type="number" name="labour" id="labour" value="" size="20"  style="width:150px;" /></td>
+  <td><input type="number" name="labour" id="labour"  size="20"style="width:150px;" /></td>
  </tr>
 
  <tr>
@@ -417,18 +417,7 @@ if( request.getParameter("partname")!=null &&request.getParameter("price")!=null
 							</div>
 						</div>	
 					
-				<div class="fixed-action-btn horizontal click-to-toggle">
-					<a class="btn-floating btn-large red">
-						<i class="material-icons">menu</i>
-					</a>
-					<ul>
-						<li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-						<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-						<li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-						<li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-					</ul>
-				</div>
-
+			
 
 
 				</footer>

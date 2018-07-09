@@ -259,9 +259,10 @@ pstmt.setString(2, jobno);
 
 
 rs=pstmt.executeQuery();
-if(rs.next()){
-	
-
+if(!rs.next()){
+	 out.println("Sorry, could not find that vehicle  . ");
+}
+	 else{
 
 %>
 <!-- PRINT STARTS HERE -->
@@ -275,9 +276,13 @@ if(rs.next()){
                             <td class="title">
                                 <img src="images/category/logo.png" width="100" height="100">
                             </td>
-                            
+        <%@ page import="java.util.Random" %>                     
+     <%Random rand = new Random();
+    int randomnumber = rand.nextInt(90000) + 10000;
+    
+    %>
                             <td>
-                                Invoice #: 123<br>
+                                Invoice #: <%=randomnumber %><br>
                                <!--   Created: January 1, 2015<br>-->
                                 Check Date: <%= new java.util.Date() %>
                             </td>

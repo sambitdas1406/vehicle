@@ -280,9 +280,9 @@
   
   //int q=Integer.parseInt(qnty);
   float q=add;
-  int lc=Integer.parseInt(pr);
+  float lc=Float.parseFloat(pr);
   
-  int discount =Integer.parseInt(discount1);
+  float discount =Float.parseFloat(discount1);
   
   int limit =Integer.parseInt(limit1);
   
@@ -493,6 +493,26 @@ if(!rs.next()) {
         </thead>
         <tbody>
          
+         <%
+       //  String partn[]=request.getParameterValues("part");
+       //  String price2[]=request.getParameterValues("price");
+      // int pp=0;
+      
+			//String name="";
+	        // for(int l=0;l<partn.length;l++)
+	        // {   
+	   	    	 //  name=partn[l];
+	   	    	  //out.println(partn[l]);
+	   	    	  
+	   	    	  
+	   	    	 //for(int p1=0;p1<price2.length;p1++) 
+		         //{
+		        	//	out.println(Integer.parseInt(b[p1])); //If integer
+		        	//pp=Integer.parseInt(price2[p1]); 
+		        	// }
+	      //   }
+         
+         %>
           <tr>
             <td>Amount Received from sale of parts:</td>
             <td><a href="#">Sales of parts</a></td>

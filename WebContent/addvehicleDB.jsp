@@ -113,12 +113,14 @@ if (rs.next()) {
 	pstmt.setInt(16, pincode);
 	int s= pstmt.executeUpdate();
 	if(s>0){
+		request.setAttribute("Success","You have Successfully Created Job");
 		response.sendRedirect("addvehicle.jsp");
 	%>
 	<% 
 	}
 	else{
-	out.print("sorry!please fill correct detail and try again" );
+	request.setAttribute("Error","Sorry! please fill correct detail and try again");
+	//out.print("sorry!please fill correct detail and try again" );
 	}
 	}
 	catch(Exception e){e.printStackTrace();

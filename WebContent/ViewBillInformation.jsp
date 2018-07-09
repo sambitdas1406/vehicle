@@ -15,10 +15,10 @@
 <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 <link href="assets/js/dataTables/dataTables.bootstrap.js" rel="stylesheet" />
 <link href="assets/js/dataTables/jquery.dataTables.js" rel="stylesheet" />
-
+<!--
 <link href="https://code.jquery.com/jquery-3.3.1.js" rel="stylesheet" />
-<link href="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" rel="stylesheet" />
-<link href="cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" rel="stylesheet" />
+<link href="cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" rel="stylesheet" />-->
 
 
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
 </script>
 
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link rel="stylesheet" href="assets/materialize/css/materialize.min.css"
 	media="screen,projection" />

@@ -14,8 +14,8 @@
 	<meta charset="utf-8" />
 	
 	
-	<script src="part.js"></script>
-<link rel="stylesheet" type="text/css" href="part.css">
+	<!-- <script src="part.js"></script> 
+<link rel="stylesheet" type="text/css" href="part.css">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Category</title>
 	

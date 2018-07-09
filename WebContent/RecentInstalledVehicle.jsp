@@ -15,12 +15,12 @@
 <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 <link href="assets/js/dataTables/dataTables.bootstrap.js" rel="stylesheet" />
 <link href="assets/js/dataTables/jquery.dataTables.js" rel="stylesheet" />
-
+<!-- 
 <link href="https://code.jquery.com/jquery-3.3.1.js" rel="stylesheet" />
 <link href="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" rel="stylesheet" />
 <link href="cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" rel="stylesheet" />
 
-
+ -->
 
 <script>
 $(document).ready(function() {
@@ -196,7 +196,6 @@ result = statement.executeQuery(qry);
 <td>FirstName</td>
 <td>Last Name</td>
 <td>Email</td>
-<td>Gender</td>
 <td>Mobile_No</td>
 <td>Action</td>
 
@@ -216,7 +215,6 @@ while (result.next()) {
 <TD><%=result.getString(10)%></TD>
 <TD><%=result.getString(11)%></TD>
 <TD><%=result.getString(12)%></TD>
-<TD><%=result.getString(14)%></TD>
 <TD><%=result.getLong(16)%></TD>
 <td style="padding:12px 20px;    margin-right: 10px;"class="btn orange"><a href="UpdateRecentVehicle.jsp?job_id=<%=result.getString("job_id")%>"><i style="color:#ffff" class="fa fa-edit" ></i></a></td>
 

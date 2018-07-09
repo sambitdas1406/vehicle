@@ -428,11 +428,11 @@ while(resultSet.next()){
 								 <input type="radio" name="gender"  value="<%=resultSet.getString(14) %>"placeholder="Gender"style="position:relative; opacity:1;    left: 0px;
                                height: 17px;
                                width: 15px;
-                               display: inline;" />Male
+                               display: inline;" required/>Male
         <input type="radio" name="gender"  value="<%=resultSet.getString(14) %>"placeholder="Gender"style="position:relative; opacity:1;    left: 0px;
                               height: 17px;
                               width: 15px;
-                              display: inline;" />Female
+                              display: inline;" required/>Female
 							</div>		
 						</div>
 						<div class="row">

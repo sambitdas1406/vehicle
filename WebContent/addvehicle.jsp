@@ -59,7 +59,6 @@ document.getElementById('job_no').value=finalSequence;
  
 </script>
 
-<script src="addvehicle.js" type="text/javascript"></script>
 
 
 

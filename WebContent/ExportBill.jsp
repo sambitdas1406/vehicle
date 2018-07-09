@@ -4,7 +4,8 @@
 <html>
 <body>
 <% 
-File file  = new File("C:\\Users\\USER\\Downloads\\bill.csv");  
+
+File file  = new File("bill.csv");  
 file.createNewFile(); 
 String filename = "f:\\csv\\bill.csv";
 Connection conn = null;
@@ -60,7 +61,7 @@ fw.append('\n');
 fw.flush();
 fw.close();
 conn.close();
-out.println("<h1>Successfully Created Csv file.check your download folder.click back to come home page<h1>");
+out.println("<h1>Successfully Created Csv file.check your Document folder.click back to come home page<h1>");
 } catch (Exception e) {
 e.printStackTrace();
 }
